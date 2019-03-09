@@ -140,5 +140,17 @@ object U_INT_experiments
       println( a.toBinaryString map { case '0' => "O" case '1' => "I" } mkString "°" )
       println( b.toBinaryString map { case '0' => "O" case '1' => "I" } mkString "°" )
     }
+    ;{
+      import java.lang.Long.parseLong
+
+      val a = parseLong("101001100",2)
+      val b = parseLong(  "1100001",2)
+
+      type A = I°O°I°O°O°I°I°O°O
+      type B =     I°I°O°O°O°O°I
+
+      println(a*b)
+      println( toLong[A*B] )
+    }
   }
 }
